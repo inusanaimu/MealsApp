@@ -3,9 +3,9 @@ import React, {useContext} from "react";
 const AppContext = React.createContext();
 
 
-const AppProvider = (props) => {
+const AppProvider = ({children}) => {
     return <AppContext.Provider value={{name:'john', role:'student'}}>
-        {props.children}
+        {children}
         </AppContext.Provider>
 }
 export const useGlobalContext = ()=>{

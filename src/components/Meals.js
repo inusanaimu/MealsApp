@@ -1,8 +1,13 @@
-import React from 'react'
 
-function Meals() {
-  return (
-    <div>Meals</div>
+import { useGlobalContext } from '../context'
+
+
+const Meals = () => {
+  const ctx = useGlobalContext()
+  return (<>
+    {console.log(ctx)}
+    <h1>Meals</h1>
+  </>
   )
 }
 

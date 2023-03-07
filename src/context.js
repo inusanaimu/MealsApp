@@ -4,7 +4,7 @@ import axios from "axios";
 
 const AppContext = React.createContext();
 
-const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=Aaaa'
+const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=aaaaa'
 const randomMealsUrl = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
 const AppProvider = ({children}) => {
@@ -15,8 +15,14 @@ const AppProvider = ({children}) => {
         setLoading(true)
         try{
             const response = await axios(url)
+
+            if (response.data.meals) {
+                
+                setMeals(response.data.meals)
+            } else {
+                setMeals([])
+            }
             // console.log(response.data.meals)
-            setMeals(response.data.meals)
         } catch (error){
             console.log(error.response)
         }

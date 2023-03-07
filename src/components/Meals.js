@@ -7,7 +7,7 @@ const Meals = () => {
   const { loading, meals } = useGlobalContext();
 
   if (loading) {
-    return <section>
+    return <section className='section'>
       <h4>Loading...</h4>
     </section>
   }

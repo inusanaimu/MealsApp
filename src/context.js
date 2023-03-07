@@ -4,7 +4,7 @@ import axios from "axios";
 
 const AppContext = React.createContext();
 
-const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=A'
+const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=Aaaa'
 const randomMealsUrl = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
 const AppProvider = ({children}) => {

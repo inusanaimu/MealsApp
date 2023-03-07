@@ -4,7 +4,14 @@ import {BsHandThumbsUp} from 'react-icons/bs'
 
 
 const Meals = () => {
-  const {meals} = useGlobalContext()
+  const { loading, meals } = useGlobalContext();
+
+  if (loading) {
+    return <section>
+      <h4>Loading...</h4>
+    </section>
+  }
+
   return (<section className ='section-center'>
     {meals.map((eachMeal)=>{
      const {idmeal, strMeal:title, strMealThumb:image} = eachMeal;

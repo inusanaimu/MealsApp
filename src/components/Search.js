@@ -12,10 +12,10 @@ function Search() {
   }
 const onSubmit = (e) => {
   e.preventDefault();
-  console.log(text)
+
   if(text){
     setSearchTerm(text);
-    setText('');
+   
   }
 }
 

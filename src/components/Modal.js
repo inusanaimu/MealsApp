@@ -13,7 +13,7 @@ function Modal() {
         <div className=' modal-content'>
           <h4>{title}</h4>
           <p> Cooking Instructions</p>
-          <p>{title}</p>
+          <p>{text}</p>
           <a href={source} target="_blank"> Original Source</a>
         
         <button className='btn' onClick={()=>setShowModal(!showModal)}>close</button>

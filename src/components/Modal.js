@@ -4,11 +4,14 @@ import { useGlobalContext } from './../context';
 function Modal() {
   const {showModal, setShowModal, selectedMeal} = useGlobalContext();
   
+  const {strMealThumb:image, strMeal:title, strInstructions:text, strSource:source} = selectedMeal;
+
   return (
     <aside className='modal-overlay' >
       <div className='modal-container'>
-        <h1 className=''>{selectedMeal.strMeal}</h1>
-        <button onClick={()=>setShowModal(!showModal)}></button>
+        <img src={image} />
+        <h1 className=''>{title}</h1>
+        <button onClick={()=>setShowModal(!showModal)}>close</button>
       </div>
     </aside>
   )

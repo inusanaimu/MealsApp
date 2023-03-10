@@ -37,6 +37,7 @@ const AppProvider = ({children}) => {
 
     const selectMeal = (idMeal, favoriteMeal) =>{
         let meal;
+        console.log(idMeal)
         meal = meals.find((meal)=>meal.idMeal === idMeal)
         setSelectedMeal(meal)
         setShowModal(true)
@@ -44,14 +45,14 @@ const AppProvider = ({children}) => {
 
     useEffect(()=>{    
         fetchMeals(`${allMealsUrl}`)
-    },[])
+    }, [])
     
     useEffect(()=>{
         if(!searchTerm)return
         fetchMeals(`${allMealsUrl}${searchTerm}`)
     }, [searchTerm])
 
-    return <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal, showModal, setShowModal,selectMeal}}>
+    return <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal, showModal, setShowModal,selectMeal, selectedMeal}}>
         {children}
         </AppContext.Provider>
 }

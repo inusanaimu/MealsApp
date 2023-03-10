@@ -9,9 +9,17 @@ function Modal() {
   return (
     <aside className='modal-overlay' >
       <div className='modal-container'>
-        <img src={image} />
-        <h1 className=''>{title}</h1>
-        <button onClick={()=>setShowModal(!showModal)}>close</button>
+        <img src={image} alt={title} className='img modal-img' />
+        <div className=' modal-content'>
+          <h4>{title}</h4>
+          <p> Cooking Instructions</p>
+          <p>{title}</p>
+          <a href={source} target="_blank"> Original Source</a>
+        
+        <button className='btn' onClick={()=>setShowModal(!showModal)}>close</button>
+        
+        </div>
+      
       </div>
     </aside>
   )

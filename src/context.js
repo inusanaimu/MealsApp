@@ -44,10 +44,15 @@ const AppProvider = ({children}) => {
     }
 
     const addToFavorites = (idMeal) => {
-        const meal = meals.find((meal) => meal.idMeal === idMeal);
         const alreadyFavorite = favorite.find((meal) => meal.idMeal === idMeal)
         if (alreadyFavorite) return
+        const meal = meals.find((meal) => meal.idMeal === idMeal);
         const updatedFavorites = [...favorite, meal];
+        setFavorite(updatedFavorites)
+    }
+
+    const removeFromFavorites = (idMeal) => {
+        const updatedFavorites = favorite.filter((meal) => meal.idMeal !== idMeal);
         setFavorite(updatedFavorites)
     }
 
@@ -60,7 +65,7 @@ const AppProvider = ({children}) => {
         fetchMeals(`${allMealsUrl}${searchTerm}`)
     }, [searchTerm])
 
-    return <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal, showModal, setShowModal,selectMeal, selectedMeal}}>
+    return <AppContext.Provider value={{loading, meals, setSearchTerm, fetchRandomMeal, showModal, setShowModal,selectMeal, selectedMeal, addToFavorites, removeFromFavorites}}>
         {children}
         </AppContext.Provider>
 }

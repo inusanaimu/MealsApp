@@ -22,10 +22,10 @@ const Meals = () => {
     {meals.map((eachMeal)=>{
      const {idMeal, strMeal:title, strMealThumb:image} = eachMeal;
     
-    return <article className='single-meal' key={idMeal} onClick={()=>{selectMeal(idMeal)}} >
-      <img src={image} className='img' />
+    return <article className='single-meal' key={idMeal} >
+      <img src={image} className='img' onClick={()=>{selectMeal(idMeal)}} />
       <footer>
-        <h5>{title}</h5>
+        <h5 onClick={()=>{selectMeal(idMeal)}}>{title}</h5>
 
         <button onClick={()=>{addToFavorites(idMeal)}} className='like-btn'><BsHandThumbsUp/></button>
       </footer>

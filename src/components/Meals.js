@@ -23,7 +23,7 @@ const Meals = () => {
      const {idMeal, strMeal:title, strMealThumb:image} = eachMeal;
     
     return <article className='single-meal' key={idMeal} >
-      <img src={image} className='img' onClick={()=>{selectMeal(idMeal)}} />
+      <img src={image} alt={title} className='img' onClick={()=>{selectMeal(idMeal)}} />
       <footer>
         <h5 onClick={()=>{selectMeal(idMeal)}}>{title}</h5>
 
